@@ -1,0 +1,52 @@
+<mvc:View
+	controllerName="mantenedorDatosUsuario.controller.App"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	height="100%"
+>
+	<Page title="{i18n>pageTitle}">
+		<content>
+			<Table
+				id="usuariosTable"
+				items="{/Usuarios}"
+				mode="Delete"
+				delete=".onDelete"
+				noDataText="Sin datos"
+			>
+				<headerToolbar>
+					<Toolbar>
+						<Title text="{i18n>pageTitle}" level="H2" />
+						<ToolbarSpacer />
+						<Button text="{i18n>newButton}" type="Emphasized" press=".onCreate" />
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column><Text text="{i18n>colId}" /></Column>
+					<Column><Text text="{i18n>colNombre}" /></Column>
+					<Column><Text text="{i18n>colApellido}" /></Column>
+					<Column><Text text="{i18n>colRut}" /></Column>
+					<Column hAlign="End"><Text text="{i18n>colEdad}" /></Column>
+					<Column><Text text="{i18n>colFechaNacimiento}" /></Column>
+					<Column><Text text="{i18n>colEstado}" /></Column>
+				</columns>
+				<items>
+					<ColumnListItem>
+						<cells>
+							<Text text="{ID}" />
+							<Input value="{Nombre}" />
+							<Input value="{Apellido}" />
+							<Input value="{Rut}" />
+							<Input value="{Edad}" type="Number" textAlign="End" />
+							<DatePicker value="{FechaNacimiento}" displayFormat="dd/MM/yyyy" />
+							<Select selectedKey="{Estado}">
+								<core:Item key="Activo" text="{i18n>estadoActivo}" />
+								<core:Item key="No activo" text="{i18n>estadoNoActivo}" />
+							</Select>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>

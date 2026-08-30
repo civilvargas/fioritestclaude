@@ -1,0 +1,6 @@
+ID,Nombre,Apellido,Rut,Edad,FechaNacimiento,Estado
+1,Juan,Pérez,12345678-9,34,1991-05-12,Activo
+2,María,González,9876543-2,28,1997-03-22,Activo
+3,Pedro,Rodríguez,11222333-4,45,1980-11-02,No activo
+4,Ana,Martínez,15987456-3,52,1973-07-19,Activo
+5,Carlos,Soto,18765432-1,23,2002-01-30,No activo
