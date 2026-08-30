@@ -1,0 +1,13 @@
+{
+	"name": "firstproject",
+	"version": "1.0.0",
+	"private": true,
+	"description": "Aplicación SAPUI5 freestyle de ejemplo (Hola Mundo)",
+	"scripts": {
+		"start": "ui5 serve --open index.html",
+		"build": "ui5 build --clean-dest"
+	},
+	"devDependencies": {
+		"@ui5/cli": "^4"
+	}
+}

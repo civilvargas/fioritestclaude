@@ -1,0 +1,26 @@
+<mvc:View
+	controllerName="firstproject.controller.App"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+>
+	<Page title="{i18n>appTitle}">
+		<content>
+			<VBox alignItems="Center" justifyContent="Center" class="sapUiLargeMarginTop">
+				<Title text="{i18n>helloText}" level="H1" class="sapUiMediumMarginBottom" />
+
+				<BusyIndicator
+					id="busyIndicator"
+					size="4rem"
+					text="{i18n>loadingText}"
+					class="sapUiMediumMarginBottom"
+				/>
+
+				<Button
+					text="{i18n>showBusyButton}"
+					type="Emphasized"
+					press=".onShowBusy"
+				/>
+			</VBox>
+		</content>
+	</Page>
+</mvc:View>
