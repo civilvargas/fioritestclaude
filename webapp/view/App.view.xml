@@ -2,6 +2,7 @@
 	controllerName="firstproject.controller.App"
 	xmlns="sap.m"
 	xmlns:mvc="sap.ui.core.mvc"
+	height="100%"
 >
 	<Page title="{i18n>appTitle}">
 		<content>

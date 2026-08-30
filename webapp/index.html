@@ -5,6 +5,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>First Project</title>
 
+	<style>
+		html, body { height: 100%; margin: 0; }
+	</style>
+
 	<script
 		id="sap-ui-bootstrap"
 		src="https://sdk.openui5.org/resources/sap-ui-core.js"
@@ -21,7 +25,8 @@
 				settings: {
 					id: "firstproject"
 				},
-				async: true
+				async: true,
+				height: "100%"
 			}).placeAt("content");
 		});
 	</script>
