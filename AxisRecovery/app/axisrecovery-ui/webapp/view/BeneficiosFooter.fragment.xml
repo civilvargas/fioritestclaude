@@ -1,0 +1,15 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+>
+	<VBox class="arBeneficiosFooter sapUiSmallMarginTop">
+		<Text text="{i18n>homeSectionBenefits}" class="arSectionTitle" />
+		<FlexBox wrap="Wrap" justifyContent="Center" class="arBenefitsBar">
+			<ObjectStatus text="Recuperacion fisica y psicologica" icon="sap-icon://favorite" state="Success" />
+			<ObjectStatus text="Informacion confiable" icon="sap-icon://validate" state="Success" />
+			<ObjectStatus text="Acceso rapido a profesionales" icon="sap-icon://outgoing-call" state="Success" />
+			<ObjectStatus text="Mayor acompanamiento" icon="sap-icon://group" state="Success" />
+			<ObjectStatus text="Retorno seguro al deporte" icon="sap-icon://physical-activity" state="Success" />
+		</FlexBox>
+	</VBox>
+</core:FragmentDefinition>

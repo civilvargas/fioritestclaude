@@ -1,0 +1,83 @@
+<mvc:View
+  controllerName="axisrecovery.ui.controller.Especialistas"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m"
+  xmlns:core="sap.ui.core"
+>
+  <Page showNavButton="false" class="arDarkPage">
+    <customHeader>
+      <Bar class="arPageHeaderBar">
+        <contentLeft>
+          <Image src="img/icon-especialistas.png" class="arPageHeaderIcon" />
+          <Title text="{i18n>especialistasTitle}" level="H2" />
+        </contentLeft>
+      </Bar>
+    </customHeader>
+    <Toolbar>
+      <Label text="{i18n>especialistasFiltro}" class="sapUiTinyMarginEnd" />
+      <Select
+        forceSelection="false"
+        selectedKey="{ui>/especialidadFiltro}"
+        change="onFiltrar"
+        items="{ui>/especialidadOpciones}"
+        width="16rem"
+      >
+        <core:Item key="{ui>key}" text="{ui>text}" />
+      </Select>
+    </Toolbar>
+    <List items="{ui>/especialistas}" noDataText=" ">
+      <CustomListItem>
+        <VBox class="arCard sapUiTinyMargin">
+          <HBox justifyContent="SpaceBetween" alignItems="Center">
+            <HBox alignItems="Center">
+              <core:Icon
+                src="sap-icon://customer"
+                class="arAvatarPhoto sapUiTinyMarginEnd"
+                size="2.5rem"
+                visible="{= !${ui>fotoUrl} }"
+              />
+              <Image
+                src="{ui>fotoUrl}"
+                class="arAvatarPhoto sapUiTinyMarginEnd"
+                width="2.5rem"
+                height="2.5rem"
+                visible="{= !!${ui>fotoUrl} }"
+              />
+              <Title text="{ui>nombreCompleto}" level="H3" />
+            </HBox>
+            <ObjectStatus text="{ui>especialidadNombre}" state="Information" />
+          </HBox>
+          <Text text="{ui>institucion}" class="sapUiTinyMarginTop" />
+          <Text text="{ui>descripcion}" class="sapUiTinyMarginTop" />
+          <HBox class="sapUiSmallMarginTop">
+            <Button
+              text="{i18n>especialistasWhatsapp}"
+              icon="sap-icon://phone"
+              type="Emphasized"
+              class="arPrimaryBtn sapUiTinyMarginEnd"
+              press="onWhatsapp"
+              visible="{= !!${ui>whatsapp} }"
+            />
+            <Button
+              text="{i18n>especialistasCorreo}"
+              icon="sap-icon://email"
+              type="Transparent"
+              class="sapUiTinyMarginEnd"
+              press="onCorreo"
+              visible="{= !!${ui>correo} }"
+            />
+            <Button
+              text="{i18n>especialistasTelefono}"
+              icon="sap-icon://call"
+              type="Transparent"
+              press="onTelefono"
+              visible="{= !!${ui>telefono} }"
+            />
+          </HBox>
+        </VBox>
+      </CustomListItem>
+    </List>
+
+    <core:Fragment fragmentName="axisrecovery.ui.view.BeneficiosFooter" type="XML" />
+  </Page>
+</mvc:View>

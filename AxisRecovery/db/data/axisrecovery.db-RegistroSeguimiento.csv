@@ -1,0 +1,7 @@
+ID,usuario_ID,fecha,nivelAnimo,nivelDolor,etapaRecuperacion,notaLibre
+e3d6218a-50ff-4e52-ab31-2ca947cd0b96,1026e583-e818-43d7-98c1-ee4fc8dd6979,2026-07-26,2,5,diagnostico,
+11eef8fa-3c7e-4598-8638-b9c8c1e3767a,1026e583-e818-43d7-98c1-ee4fc8dd6979,2026-08-02,2,4,diagnostico,
+2e52dfeb-3e70-4f4e-b8b3-ef6e7973bc2e,1026e583-e818-43d7-98c1-ee4fc8dd6979,2026-08-09,3,4,tratamiento,
+8da8f943-50a4-4e05-84cc-0e48c72077ef,1026e583-e818-43d7-98c1-ee4fc8dd6979,2026-08-16,3,3,tratamiento,
+425c20c0-e7c4-4e5c-a2a0-d26e3e20e985,1026e583-e818-43d7-98c1-ee4fc8dd6979,2026-08-23,4,2,tratamiento,
+4d9aef38-2a36-4071-9f64-c3ca59d99502,1026e583-e818-43d7-98c1-ee4fc8dd6979,2026-08-30,4,2,rehabilitacion,

@@ -1,0 +1,64 @@
+<mvc:View
+  controllerName="axisrecovery.ui.controller.Seguimiento"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m"
+  xmlns:core="sap.ui.core"
+>
+  <Page showNavButton="false" class="arDarkPage">
+    <customHeader>
+      <Bar class="arPageHeaderBar">
+        <contentLeft>
+          <Image src="img/icon-seguimiento.png" class="arPageHeaderIcon" />
+          <Title text="{i18n>seguimientoTitle}" level="H2" />
+        </contentLeft>
+      </Bar>
+    </customHeader>
+    <VBox class="arCard sapUiSmallMarginBottom">
+      <Title text="{i18n>seguimientoRegistrar}" level="H3" />
+
+      <Label text="{i18n>seguimientoAnimo}" class="sapUiTinyMarginTop" />
+      <RatingIndicator maxValue="5" value="{ui>/nivelAnimo}" />
+
+      <Label text="{i18n>seguimientoDolor}" class="sapUiTinyMarginTop" />
+      <RatingIndicator maxValue="5" value="{ui>/nivelDolor}" />
+
+      <Label text="{i18n>seguimientoEtapa}" class="sapUiTinyMarginTop" />
+      <Select selectedKey="{ui>/etapaRecuperacion}" width="16rem">
+        <core:Item key="diagnostico" text="{i18n>seguimientoEtapaDiagnostico}" />
+        <core:Item key="tratamiento" text="{i18n>seguimientoEtapaTratamiento}" />
+        <core:Item key="rehabilitacion" text="{i18n>seguimientoEtapaRehabilitacion}" />
+        <core:Item key="alta" text="{i18n>seguimientoEtapaAlta}" />
+      </Select>
+
+      <Label text="{i18n>seguimientoNota}" class="sapUiTinyMarginTop" />
+      <TextArea value="{ui>/notaLibre}" rows="2" width="100%" />
+
+      <Button
+        text="{i18n>seguimientoGuardar}"
+        type="Emphasized"
+        class="arPrimaryBtn sapUiSmallMarginTop"
+        press="onGuardar"
+        width="12rem"
+      />
+    </VBox>
+
+    <Title text="{i18n>seguimientoHistorial}" level="H3" class="arSectionTitle" />
+    <List items="{ui>/historial}" noDataText="{i18n>seguimientoSinRegistros}">
+      <CustomListItem>
+        <VBox class="arCard sapUiTinyMargin">
+          <HBox justifyContent="SpaceBetween">
+            <Text text="{ui>fecha}" />
+            <ObjectStatus text="{ui>etapaRecuperacion}" state="Information" />
+          </HBox>
+          <HBox class="sapUiTinyMarginTop">
+            <Text text="Animo: {ui>nivelAnimo}/5" class="sapUiTinyMarginEnd" />
+            <Text text="Dolor: {ui>nivelDolor}/5" />
+          </HBox>
+          <Text text="{ui>notaLibre}" class="sapUiTinyMarginTop" />
+        </VBox>
+      </CustomListItem>
+    </List>
+
+    <core:Fragment fragmentName="axisrecovery.ui.view.BeneficiosFooter" type="XML" />
+  </Page>
+</mvc:View>

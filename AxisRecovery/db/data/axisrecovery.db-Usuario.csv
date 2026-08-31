@@ -1,0 +1,4 @@
+ID,nombre,correo,contrasenaHash,rol,deportePracticado,biografia,activo
+4ca0b277-c899-404c-ad1f-118d5d0500e5,Administrador AxisRecovery,admin@axisrecovery.cl,$2b$12$CcjpN/vF5MFkNCxfkxfm.O6EH5ycfqATzinFr2uBYr9bS27kXGykC,Administrador,,Cuenta de administración del sitio.,true
+1026e583-e818-43d7-98c1-ee4fc8dd6979,Usuario Demo,demo@axisrecovery.cl,$2b$12$1.afY9acDw.1KljhCboM/e24X4ScxHg7h2OZwlgzrut4jhcnIibHu,Deportista,Balonmano,Cuenta de prueba para probar comunidad y seguimiento.,true
+903a371f-fa0f-49b3-9f73-bc9fd5714938,Valentina Rojas,valentina.demo@axisrecovery.cl,$2b$12$I0J60TVixlD9BHv4ZmNLZ.92C0OIwUZaFGkySjWJEw8JuPKaR7fvO,Deportista,Atletismo,"Cuenta de prueba, comparte su experiencia en la comunidad.",true

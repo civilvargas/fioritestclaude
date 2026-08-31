@@ -1,0 +1,74 @@
+<mvc:View controllerName="axisrecovery.ui.controller.Admin" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+  <Page title="{i18n>adminTitle}" showNavButton="false">
+    <MessageStrip
+      text="{i18n>adminSoloAdmin}"
+      type="Warning"
+      showIcon="true"
+      visible="{= ${session>/rol} !== 'Administrador' }"
+      class="sapUiSmallMarginBottom"
+    />
+
+    <FlexBox wrap="Wrap" justifyContent="Center" class="sapUiSmallMarginBottom" visible="{= ${session>/rol} === 'Administrador' }">
+      <VBox class="arCard sapUiTinyMargin" width="12rem" alignItems="Center">
+        <Title text="{ui>/metrics/usuarios}" level="H1" />
+        <Text text="{i18n>adminMetricasUsuarios}" />
+      </VBox>
+      <VBox class="arCard sapUiTinyMargin" width="12rem" alignItems="Center">
+        <Title text="{ui>/metrics/publicaciones}" level="H1" />
+        <Text text="{i18n>adminMetricasPublicaciones}" />
+      </VBox>
+      <VBox class="arCard sapUiTinyMargin" width="12rem" alignItems="Center">
+        <Title text="{ui>/metrics/mensajesNuevos}" level="H1" />
+        <Text text="{i18n>adminMetricasMensajes}" />
+      </VBox>
+    </FlexBox>
+
+    <IconTabBar visible="{= ${session>/rol} === 'Administrador' }">
+      <items>
+        <IconTabFilter text="{i18n>adminTabModeracion}">
+          <List items="{ui>/publicaciones}" noDataText=" ">
+            <CustomListItem>
+              <VBox class="arCard sapUiTinyMargin">
+                <HBox justifyContent="SpaceBetween">
+                  <Title text="{ui>titulo}" level="H4" />
+                  <ObjectStatus text="{ui>estadoModeracion}" state="Success" />
+                </HBox>
+                <Text text="{ui>contenido}" maxLines="2" />
+                <HBox class="sapUiTinyMarginTop">
+                  <Button
+                    text="{i18n>adminOcultar}"
+                    type="Reject"
+                    class="sapUiTinyMarginEnd"
+                    press="onOcultarPublicacion"
+                    visible="{= ${ui>estadoModeracion} === 'publicado' }"
+                  />
+                  <Button
+                    text="{i18n>adminPublicar}"
+                    type="Accept"
+                    press="onPublicarPublicacion"
+                    visible="{= ${ui>estadoModeracion} !== 'publicado' }"
+                  />
+                </HBox>
+              </VBox>
+            </CustomListItem>
+          </List>
+        </IconTabFilter>
+
+        <IconTabFilter text="{i18n>adminTabMensajes}">
+          <List items="{ui>/mensajes}" noDataText=" ">
+            <CustomListItem>
+              <VBox class="arCard sapUiTinyMargin">
+                <HBox justifyContent="SpaceBetween">
+                  <Title text="{ui>nombre}" level="H4" />
+                  <ObjectStatus text="{ui>estado}" state="Information" />
+                </HBox>
+                <Text text="{ui>correo}" />
+                <Text text="{ui>mensaje}" class="sapUiTinyMarginTop" />
+              </VBox>
+            </CustomListItem>
+          </List>
+        </IconTabFilter>
+      </items>
+    </IconTabBar>
+  </Page>
+</mvc:View>

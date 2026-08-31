@@ -1,0 +1,6 @@
+<mvc:View controllerName="axisrecovery.ui.controller.NotFound" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+  <Page title="{i18n>notFoundTitle}" showNavButton="false">
+    <MessageStrip text="{i18n>notFoundText}" type="Error" showIcon="true" class="sapUiMediumMargin" />
+    <Button text="{i18n>notFoundBtn}" type="Emphasized" class="arPrimaryBtn sapUiMediumMargin" press="onVolver" />
+  </Page>
+</mvc:View>

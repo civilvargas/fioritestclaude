@@ -1,0 +1,59 @@
+<mvc:View
+  controllerName="axisrecovery.ui.controller.PublicacionDetalle"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m"
+>
+  <Page title="{ui>/publicacion/titulo}" showNavButton="true" navButtonPress="onVolver">
+    <VBox class="arCard sapUiSmallMarginBottom">
+      <HBox justifyContent="SpaceBetween">
+        <Text text="{ui>/publicacion/autorNombre}" />
+        <Text text="{ui>/publicacion/categoria}" />
+      </HBox>
+      <Text text="{ui>/publicacion/contenido}" class="sapUiTinyMarginTop" />
+      <HBox class="sapUiSmallMarginTop">
+        <Button
+          text="{ui>/publicacion/likesCount} {i18n>comunidadMeSirvio}"
+          icon="sap-icon://favorite"
+          type="Transparent"
+          press="onLike"
+        />
+        <Button
+          text="{i18n>comunidadReportar}"
+          icon="sap-icon://flag"
+          type="Transparent"
+          press="onReportarPublicacion"
+        />
+      </HBox>
+    </VBox>
+
+    <Title text="{i18n>comunidadComentarios}" level="H3" class="arSectionTitle" />
+
+    <VBox class="arCard sapUiSmallMarginBottom" visible="{session>/autenticado}">
+      <TextArea
+        placeholder="{i18n>comunidadComentarPlaceholder}"
+        value="{ui>/nuevoComentario}"
+        rows="2"
+        width="100%"
+      />
+      <Button
+        text="{i18n>comunidadComentar}"
+        type="Emphasized"
+        class="arPrimaryBtn sapUiTinyMarginTop"
+        press="onComentar"
+        width="10rem"
+      />
+    </VBox>
+
+    <List items="{ui>/comentarios}" noDataText=" ">
+      <CustomListItem>
+        <VBox class="arCard sapUiTinyMargin">
+          <HBox justifyContent="SpaceBetween">
+            <Text text="{ui>autorNombre}" />
+            <Button icon="sap-icon://flag" type="Transparent" press="onReportarComentario" />
+          </HBox>
+          <Text text="{ui>contenido}" class="sapUiTinyMarginTop" />
+        </VBox>
+      </CustomListItem>
+    </List>
+  </Page>
+</mvc:View>

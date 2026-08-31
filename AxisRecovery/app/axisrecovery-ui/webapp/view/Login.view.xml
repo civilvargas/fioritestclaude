@@ -1,0 +1,48 @@
+<mvc:View controllerName="axisrecovery.ui.controller.Login" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+  <Page showHeader="false">
+    <FlexBox justifyContent="Center" class="sapUiMediumMarginTop">
+      <VBox class="arCard" width="26rem">
+        <SegmentedButton selectedKey="{ui>/mode}" select="onModeSelect">
+          <items>
+            <SegmentedButtonItem key="login" text="{i18n>loginTabLogin}" />
+            <SegmentedButtonItem key="register" text="{i18n>loginTabRegister}" />
+          </items>
+        </SegmentedButton>
+
+        <VBox visible="{= ${ui>/mode} === 'login' }" class="sapUiMediumMarginTop">
+          <Label text="{i18n>loginCorreo}" />
+          <Input value="{ui>/loginCorreo}" type="Email" />
+          <Label text="{i18n>loginContrasena}" class="sapUiTinyMarginTop" />
+          <Input value="{ui>/loginContrasena}" type="Password" submit="onLogin" />
+          <Button
+            text="{i18n>loginBtnEntrar}"
+            type="Emphasized"
+            class="arPrimaryBtn sapUiMediumMarginTop"
+            press="onLogin"
+            busy="{ui>/cargando}"
+          />
+        </VBox>
+
+        <VBox visible="{= ${ui>/mode} === 'register' }" class="sapUiMediumMarginTop">
+          <Label text="{i18n>loginNombre}" />
+          <Input value="{ui>/regNombre}" />
+          <Label text="{i18n>loginCorreo}" class="sapUiTinyMarginTop" />
+          <Input value="{ui>/regCorreo}" type="Email" />
+          <Label text="{i18n>loginDeporte}" class="sapUiTinyMarginTop" />
+          <Input value="{ui>/regDeporte}" />
+          <Label text="{i18n>loginContrasena}" class="sapUiTinyMarginTop" />
+          <Input value="{ui>/regContrasena}" type="Password" />
+          <Label text="{i18n>loginContrasenaConfirmar}" class="sapUiTinyMarginTop" />
+          <Input value="{ui>/regContrasenaConfirmar}" type="Password" submit="onRegister" />
+          <Button
+            text="{i18n>loginBtnCrear}"
+            type="Emphasized"
+            class="arPrimaryBtn sapUiMediumMarginTop"
+            press="onRegister"
+            busy="{ui>/cargando}"
+          />
+        </VBox>
+      </VBox>
+    </FlexBox>
+  </Page>
+</mvc:View>

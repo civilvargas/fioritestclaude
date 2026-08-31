@@ -1,0 +1,309 @@
+/* AxisRecovery - tokens de color extraidos de la presentacion original del proyecto (ver vault de Obsidian, Guia-de-Estilo-Visual.md) */
+:root {
+  --ar-color-bg-dark: #081428;
+  --ar-color-bg-dark-alt: #0c1e3d;
+  --ar-color-primary: #1170dc;
+  --ar-color-primary-hover: #2f8fe8;
+  --ar-color-text-onDark: #ffffff;
+  --ar-color-text-onDark-secondary: #c7d2e3;
+  --ar-color-card-bg: #eef1f7;
+  --ar-color-text-onCard: #12213c;
+  --ar-color-success: #1e8b3d;
+  --ar-color-border: #1e4a8c;
+}
+
+.arNavBar {
+  background: linear-gradient(90deg, var(--ar-color-bg-dark) 0%, var(--ar-color-bg-dark-alt) 100%) !important;
+  border-bottom: 2px solid var(--ar-color-border);
+}
+
+.arNavBar .sapMBtn, .arNavBar .sapMText, .arNavBar .sapMTitle {
+  color: var(--ar-color-text-onDark) !important;
+}
+
+.arBrandLogo img {
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+.arBrandWordmark img {
+  height: 1.75rem;
+  width: auto;
+  vertical-align: middle;
+}
+
+.arVisuallyHidden {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.arBrand {
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  color: var(--ar-color-text-onDark) !important;
+  padding: 0 0.5rem;
+}
+
+.arAppFlex {
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+.arRootFlex {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Hero de portada (Home) */
+.arHero {
+  background: linear-gradient(135deg, var(--ar-color-bg-dark) 0%, var(--ar-color-bg-dark-alt) 100%);
+  color: var(--ar-color-text-onDark);
+  padding: 2.5rem 1.5rem;
+  border-radius: 0 0 1rem 1rem;
+}
+
+.arHero .sapMTitle, .arHero .sapMText {
+  color: var(--ar-color-text-onDark) !important;
+}
+
+.arHeroSubtitle {
+  color: var(--ar-color-text-onDark-secondary) !important;
+}
+
+.arSectionTitle {
+  font-weight: 700;
+  margin: 1.5rem 0 0.75rem 0.5rem;
+  color: var(--ar-color-text-onCard);
+}
+
+/* Seccion oscura tipo diapositiva original (fondo navy, tarjetas claras encima) */
+.arDarkSection {
+  background: linear-gradient(160deg, var(--ar-color-bg-dark) 0%, var(--ar-color-bg-dark-alt) 100%);
+  padding: 0.5rem 0.5rem 2rem 0.5rem;
+}
+
+.arDarkSection .arSectionTitle {
+  color: var(--ar-color-text-onDark) !important;
+}
+
+.arDarkSection .arBenefitsBar .sapMObjStatusText {
+  color: var(--ar-color-text-onDark) !important;
+}
+
+/* Fondo oscuro para las paginas de cada seccion, igual estilo que el inicio */
+.sapMPage.arDarkPage,
+.sapMPage.arDarkPage > .sapMPageEnableScrolling {
+  background: linear-gradient(160deg, var(--ar-color-bg-dark) 0%, var(--ar-color-bg-dark-alt) 100%) !important;
+}
+
+.arDarkPage .sapMPageHeader {
+  background: linear-gradient(90deg, var(--ar-color-bg-dark) 0%, var(--ar-color-bg-dark-alt) 100%) !important;
+  border-bottom: 2px solid var(--ar-color-border);
+}
+
+.arDarkPage .sapMPageHeader .sapMTitle {
+  color: var(--ar-color-text-onDark) !important;
+}
+
+.arDarkPage .arSectionTitle {
+  color: var(--ar-color-text-onDark) !important;
+}
+
+.arDarkPage .sapMTB .sapMLabel {
+  color: var(--ar-color-text-onDark) !important;
+}
+
+.arDarkPage .sapMList,
+.arDarkPage .sapMLIB,
+.arDarkPage .sapMListUl {
+  background: transparent !important;
+  border-color: transparent !important;
+}
+
+.arDarkPage .sapMLIBContent {
+  color: var(--ar-color-text-onDark-secondary);
+}
+
+.arDarkPage .sapMListNoDataText {
+  color: var(--ar-color-text-onDark-secondary) !important;
+}
+
+.arDarkPage .sapMIBar {
+  background: transparent !important;
+}
+
+/* Tarjetas estilo "card" claras sobre fondo oscuro, como en la presentacion */
+.arCard {
+  background: var(--ar-color-card-bg);
+  border-radius: 14px;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(8, 20, 40, 0.15);
+}
+
+.arCard .sapMText, .arCard .sapMTitle, .arCard .sapMLabel {
+  color: var(--ar-color-text-onCard) !important;
+}
+
+.arIconBadge {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--ar-color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.arCardIcon {
+  width: 56px;
+  height: 56px;
+  margin-bottom: 0.5rem;
+}
+
+.arCardIcon img {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+}
+
+.arResourceImage {
+  border-radius: 14px;
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.arCardIconSmall,
+.arCardIconSmall img {
+  width: 32px;
+  height: 32px;
+  margin-bottom: 0;
+}
+
+.arPageHeaderBar {
+  background: transparent !important;
+  padding-left: 1rem;
+}
+
+.arPageHeaderIcon,
+.arPageHeaderIcon img {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  margin-right: 0.75rem;
+  vertical-align: middle;
+}
+
+.arAvatarPhoto {
+  margin-bottom: 0;
+}
+
+.arAvatarPhoto img {
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.sapMHBox > .arAvatarPhoto.sapUiIcon {
+  border-radius: 50%;
+  background: var(--ar-color-border);
+  color: #fff;
+  padding: 0.4rem;
+  box-sizing: border-box;
+}
+
+.arMsgAviso {
+  border-left: 4px solid var(--ar-color-primary);
+}
+
+.arModuleGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 0.5rem;
+}
+
+.arModuleGrid .arCard {
+  flex: 1 1 220px;
+  min-width: 220px;
+  cursor: pointer;
+}
+
+.arBenefitsBar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  padding: 1rem 0.5rem;
+}
+
+.arPrimaryBtn {
+  background-color: var(--ar-color-primary) !important;
+  border-color: var(--ar-color-primary) !important;
+}
+
+/* Botones curvos en toda la app */
+.sapMBtn,
+.sapMBtnInner {
+  border-radius: 999px !important;
+  overflow: hidden;
+}
+
+.arSessionName {
+  color: var(--ar-color-text-onDark) !important;
+  font-weight: 700;
+  padding: 0 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.arAboutCard {
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem;
+}
+
+.arAboutImage {
+  border-radius: 14px;
+  overflow: hidden;
+  flex: 1 1 320px;
+  max-width: 420px;
+}
+
+.arAboutImage img {
+  border-radius: 14px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.arAboutText {
+  flex: 2 1 320px;
+}
+
+.arAboutText .sapMTitle {
+  margin-bottom: 0.5rem;
+}
+
+/* Comunidad: tarjeta de publicacion tipo feed */
+.arFeedCard {
+  border-radius: 12px;
+  margin-bottom: 0.75rem;
+}
+
+/* Responsive: en pantallas angostas, apilar y reducir paddings */
+@media (max-width: 600px) {
+  .arHero {
+    padding: 1.5rem 1rem;
+    border-radius: 0;
+  }
+  .arModuleGrid .arCard {
+    flex: 1 1 100%;
+  }
+}

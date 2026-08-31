@@ -1,0 +1,161 @@
+{
+  "_version": "1.59.0",
+  "sap.app": {
+    "id": "axisrecovery.ui",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "applicationVersion": {
+      "version": "1.0.0"
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "img/favicon.png"
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    },
+    "fullWidth": true
+  },
+  "sap.ui5": {
+    "rootView": {
+      "viewName": "axisrecovery.ui.view.App",
+      "type": "XML",
+      "id": "app"
+    },
+    "dependencies": {
+      "minUI5Version": "1.120.0",
+      "libs": {
+        "sap.m": {},
+        "sap.f": {},
+        "sap.ui.core": {},
+        "sap.ui.layout": {}
+      }
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "axisrecovery.ui.i18n.i18n"
+        }
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "viewPath": "axisrecovery.ui.view",
+        "controlId": "app",
+        "controlAggregation": "pages",
+        "transition": "slide",
+        "async": true
+      },
+      "routes": [
+        {
+          "pattern": "",
+          "name": "home",
+          "target": "home"
+        },
+        {
+          "pattern": "login",
+          "name": "login",
+          "target": "login"
+        },
+        {
+          "pattern": "recursos/{modulo}",
+          "name": "recursos",
+          "target": "recursos"
+        },
+        {
+          "pattern": "especialistas",
+          "name": "especialistas",
+          "target": "especialistas"
+        },
+        {
+          "pattern": "comunidad",
+          "name": "comunidad",
+          "target": "comunidad"
+        },
+        {
+          "pattern": "comunidad/{id}",
+          "name": "publicacionDetalle",
+          "target": "publicacionDetalle"
+        },
+        {
+          "pattern": "seguimiento",
+          "name": "seguimiento",
+          "target": "seguimiento"
+        },
+        {
+          "pattern": "contacto",
+          "name": "contacto",
+          "target": "contacto"
+        },
+        {
+          "pattern": "admin",
+          "name": "admin",
+          "target": "admin"
+        },
+        {
+          "pattern": ":all*:",
+          "name": "notFound",
+          "target": "notFound"
+        }
+      ],
+      "targets": {
+        "home": {
+          "viewName": "Home",
+          "viewId": "home"
+        },
+        "login": {
+          "viewName": "Login",
+          "viewId": "login"
+        },
+        "recursos": {
+          "viewName": "Recursos",
+          "viewId": "recursos"
+        },
+        "especialistas": {
+          "viewName": "Especialistas",
+          "viewId": "especialistas"
+        },
+        "comunidad": {
+          "viewName": "Comunidad",
+          "viewId": "comunidad"
+        },
+        "publicacionDetalle": {
+          "viewName": "PublicacionDetalle",
+          "viewId": "publicacionDetalle"
+        },
+        "seguimiento": {
+          "viewName": "Seguimiento",
+          "viewId": "seguimiento"
+        },
+        "contacto": {
+          "viewName": "Contacto",
+          "viewId": "contacto"
+        },
+        "admin": {
+          "viewName": "Admin",
+          "viewId": "admin"
+        },
+        "notFound": {
+          "viewName": "NotFound",
+          "viewId": "notFound"
+        }
+      }
+    }
+  }
+}

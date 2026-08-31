@@ -1,0 +1,49 @@
+{
+  "name": "axisrecovery",
+  "version": "1.0.0",
+  "description": "AxisRecovery - Plataforma digital de orientacion y acompanamiento para deportistas lesionados (Colegio Almondale Lomas). Backend SAP CAP + Frontend SAPUI5 freestyle.",
+  "private": true,
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@sap/cds": "^10",
+    "@cap-js/sqlite": "^3",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "bcryptjs": "^2.4.3"
+  },
+  "devDependencies": {
+    "@sap/cds-dk": "^10"
+  },
+  "scripts": {
+    "start": "cds watch",
+    "watch": "cds watch",
+    "deploy-sqlite": "cds deploy --to sqlite:db/axisrecovery.sqlite"
+  },
+  "cds": {
+    "requires": {
+      "db": {
+        "kind": "sqlite",
+        "credentials": {
+          "url": "db/axisrecovery.sqlite"
+        }
+      },
+      "auth": {
+        "kind": "dummy"
+      },
+      "[production]": {
+        "db": {
+          "kind": "hana-cloud"
+        },
+        "auth": {
+          "kind": "xsuaa"
+        }
+      }
+    },
+    "odata": {
+      "version": "v4"
+    }
+  }
+}

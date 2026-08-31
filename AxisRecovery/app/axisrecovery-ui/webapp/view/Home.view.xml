@@ -1,0 +1,59 @@
+<mvc:View
+  controllerName="axisrecovery.ui.controller.Home"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m"
+  xmlns:core="sap.ui.core"
+  xmlns:layout="sap.ui.layout"
+>
+  <Page showHeader="false" class="sapUiNoContentPadding">
+    <VBox class="arHero">
+      <Text text="{i18n>homeSubtitle}" class="arHeroSubtitle" />
+    </VBox>
+
+    <VBox class="arDarkSection">
+      <Text text="{i18n>homeSectionModules}" class="arSectionTitle" />
+      <FlexBox wrap="Wrap" class="arModuleGrid">
+        <VBox id="cardRecursos" class="arCard">
+          <Image src="img/icon-recursos.png" alt="Recursos educativos" class="arCardIcon" />
+          <Title text="{i18n>navRecursos}" level="H3" />
+          <Text text="Videos, guias e infografias sobre lesiones, prevencion y rehabilitacion." />
+          <Button text="Ver mas" type="Transparent" press="onGoRecursos" />
+        </VBox>
+        <VBox id="cardApoyo" class="arCard">
+          <Image src="img/icon-apoyo.png" alt="Apoyo psicológico" class="arCardIcon" />
+          <Title text="{i18n>navApoyo}" level="H3" />
+          <Text text="Estrategias de afrontamiento para la ansiedad, la frustracion y la motivacion." />
+          <Button text="Ver mas" type="Transparent" press="onGoApoyo" />
+        </VBox>
+        <VBox id="cardEspecialistas" class="arCard">
+          <Image src="img/icon-especialistas.png" alt="Especialistas" class="arCardIcon" />
+          <Title text="{i18n>navEspecialistas}" level="H3" />
+          <Text text="Kinesiologos, psicologos deportivos y medicos a un clic de distancia." />
+          <Button text="Ver mas" type="Transparent" press="onGoEspecialistas" />
+        </VBox>
+        <VBox id="cardComunidad" class="arCard">
+          <Image src="img/icon-comunidad.png" alt="Comunidad" class="arCardIcon" />
+          <Title text="{i18n>navComunidad}" level="H3" />
+          <Text text="Testimonios y comentarios de otros deportistas que viven lo mismo que tu." />
+          <Button text="Ver mas" type="Transparent" press="onGoComunidad" />
+        </VBox>
+        <VBox id="cardSeguimiento" class="arCard">
+          <Image src="img/icon-seguimiento.png" alt="Mi seguimiento" class="arCardIcon" />
+          <Title text="{i18n>navSeguimiento}" level="H3" />
+          <Text text="Registra como te sientes durante tu proceso de recuperacion." />
+          <Button text="Ver mas" type="Transparent" press="onGoSeguimiento" />
+        </VBox>
+      </FlexBox>
+
+      <HBox wrap="Wrap" class="arCard arAboutCard sapUiSmallMarginTop">
+        <Image src="img/about-recuperacion.jpg" alt="Acompanamiento en la recuperacion deportiva" class="arAboutImage" />
+        <VBox class="arAboutText">
+          <Title text="{i18n>homeAboutTitle}" level="H2" />
+          <Text text="{i18n>homeAboutText}" />
+        </VBox>
+      </HBox>
+
+      <core:Fragment fragmentName="axisrecovery.ui.view.BeneficiosFooter" type="XML" />
+    </VBox>
+  </Page>
+</mvc:View>

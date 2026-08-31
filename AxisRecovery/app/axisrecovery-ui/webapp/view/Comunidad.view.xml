@@ -1,0 +1,60 @@
+<mvc:View controllerName="axisrecovery.ui.controller.Comunidad" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:core="sap.ui.core">
+  <Page showNavButton="false" class="arDarkPage">
+    <customHeader>
+      <Bar class="arPageHeaderBar">
+        <contentLeft>
+          <Image src="img/icon-comunidad.png" class="arPageHeaderIcon" />
+          <Title text="{i18n>comunidadTitle}" level="H2" />
+        </contentLeft>
+      </Bar>
+    </customHeader>
+    <VBox class="arCard sapUiSmallMarginBottom" visible="{session>/autenticado}">
+      <Title text="{i18n>comunidadNuevaPublicacion}" level="H3" />
+      <Input placeholder="{i18n>comunidadTituloPlaceholder}" value="{ui>/nuevoTitulo}" class="sapUiTinyMarginTop" />
+      <TextArea
+        placeholder="{i18n>comunidadContenidoPlaceholder}"
+        value="{ui>/nuevoContenido}"
+        rows="3"
+        class="sapUiTinyMarginTop"
+        width="100%"
+      />
+      <Button
+        text="{i18n>comunidadPublicar}"
+        type="Emphasized"
+        class="arPrimaryBtn sapUiTinyMarginTop"
+        press="onPublicar"
+        width="10rem"
+      />
+    </VBox>
+    <MessageStrip
+      text="{i18n>comunidadLoginParaParticipar}"
+      type="Information"
+      showIcon="true"
+      visible="{= !${session>/autenticado} }"
+      class="sapUiSmallMarginBottom"
+    />
+
+    <List items="{ui>/publicaciones}" noDataText="{i18n>comunidadSinPublicaciones}">
+      <CustomListItem>
+        <VBox class="arCard arFeedCard sapUiTinyMargin">
+          <HBox justifyContent="SpaceBetween">
+            <Title text="{ui>titulo}" level="H4" />
+            <Text text="{ui>autorNombre}" />
+          </HBox>
+          <Text text="{ui>contenido}" maxLines="3" class="sapUiTinyMarginTop" />
+          <HBox class="sapUiTinyMarginTop" justifyContent="SpaceBetween">
+            <Button
+              text="{ui>likesCount} {i18n>comunidadMeSirvio}"
+              icon="sap-icon://favorite"
+              type="Transparent"
+              press="onLike"
+            />
+            <Button text="{i18n>comunidadComentarios}" icon="sap-icon://comment" type="Transparent" press="onAbrirPublicacion" />
+          </HBox>
+        </VBox>
+      </CustomListItem>
+    </List>
+
+    <core:Fragment fragmentName="axisrecovery.ui.view.BeneficiosFooter" type="XML" />
+  </Page>
+</mvc:View>
