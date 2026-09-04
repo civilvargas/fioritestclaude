@@ -1,4 +1,9 @@
-<mvc:View controllerName="axisrecovery.ui.controller.Admin" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+<mvc:View
+  controllerName="axisrecovery.ui.controller.Admin"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m"
+  xmlns:core="sap.ui.core"
+>
   <Page title="{i18n>adminTitle}" showNavButton="false">
     <MessageStrip
       text="{i18n>adminSoloAdmin}"
@@ -54,6 +59,50 @@
           </List>
         </IconTabFilter>
 
+        <IconTabFilter text="{i18n>adminTabEspecialistas}">
+          <VBox>
+            <Toolbar>
+              <ToolbarSpacer />
+              <Button
+                text="{i18n>adminEspecialistaNuevo}"
+                type="Emphasized"
+                press="onNuevoEspecialista"
+              />
+            </Toolbar>
+            <List items="{ui>/especialistas}" noDataText=" ">
+              <CustomListItem>
+                <VBox class="arCard sapUiTinyMargin">
+                  <HBox justifyContent="SpaceBetween">
+                    <VBox>
+                      <Title text="{ui>nombreCompleto}" level="H4" />
+                      <Text text="{ui>especialidadNombre}" />
+                    </VBox>
+                    <ObjectStatus
+                      text="{path: 'ui>activo', formatter: '.formatActivo'}"
+                      state="{= ${ui>activo} ? 'Success' : 'None' }"
+                    />
+                  </HBox>
+                  <Text text="{ui>institucion}" class="sapUiTinyMarginTop" />
+                  <Text text="{ui>correo}" />
+                  <Text text="{ui>telefono}" />
+                  <HBox class="sapUiTinyMarginTop">
+                    <Button
+                      text="{i18n>commonEditar}"
+                      press="onEditarEspecialista"
+                      class="sapUiTinyMarginEnd"
+                    />
+                    <Button
+                      text="{i18n>adminEliminar}"
+                      type="Reject"
+                      press="onEliminarEspecialista"
+                    />
+                  </HBox>
+                </VBox>
+              </CustomListItem>
+            </List>
+          </VBox>
+        </IconTabFilter>
+
         <IconTabFilter text="{i18n>adminTabMensajes}">
           <List items="{ui>/mensajes}" noDataText=" ">
             <CustomListItem>
@@ -70,5 +119,54 @@
         </IconTabFilter>
       </items>
     </IconTabBar>
+
+    <dependents>
+    <Dialog id="especialistaDialog" title="{ui>/especialistaForm/titulo}" contentWidth="28rem">
+      <content>
+        <VBox class="sapUiSmallMargin">
+          <Label text="{i18n>adminCampoNombre}" />
+          <Input value="{ui>/especialistaForm/nombreCompleto}" />
+
+          <Label text="{i18n>adminCampoEspecialidad}" class="sapUiTinyMarginTop" />
+          <Select
+            forceSelection="false"
+            selectedKey="{ui>/especialistaForm/especialidadId}"
+            items="{ui>/especialidades}"
+          >
+            <core:Item key="{ui>ID}" text="{ui>nombre}" />
+          </Select>
+
+          <Label text="{i18n>adminCampoInstitucion}" class="sapUiTinyMarginTop" />
+          <Input value="{ui>/especialistaForm/institucion}" />
+
+          <Label text="{i18n>adminCampoTelefono}" class="sapUiTinyMarginTop" />
+          <Input value="{ui>/especialistaForm/telefono}" />
+
+          <Label text="{i18n>adminCampoCorreo}" class="sapUiTinyMarginTop" />
+          <Input value="{ui>/especialistaForm/correo}" />
+
+          <Label text="{i18n>adminCampoWhatsapp}" class="sapUiTinyMarginTop" />
+          <Input value="{ui>/especialistaForm/whatsapp}" />
+
+          <Label text="{i18n>adminCampoDescripcion}" class="sapUiTinyMarginTop" />
+          <TextArea value="{ui>/especialistaForm/descripcion}" rows="3" width="100%" />
+
+          <Label text="{i18n>adminCampoFoto}" class="sapUiTinyMarginTop" />
+          <Input value="{ui>/especialistaForm/fotoUrl}" />
+
+          <HBox class="sapUiTinyMarginTop" alignItems="Center">
+            <CheckBox selected="{ui>/especialistaForm/activo}" />
+            <Text text="{i18n>adminCampoActivo}" class="sapUiTinyMarginBegin" />
+          </HBox>
+        </VBox>
+      </content>
+      <beginButton>
+        <Button text="{i18n>commonGuardar}" type="Emphasized" press="onGuardarEspecialista" />
+      </beginButton>
+      <endButton>
+        <Button text="{i18n>commonCancelar}" press="onCancelarEspecialistaForm" />
+      </endButton>
+    </Dialog>
+    </dependents>
   </Page>
 </mvc:View>
